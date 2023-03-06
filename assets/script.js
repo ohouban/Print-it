@@ -29,22 +29,22 @@ next.addEventListener('click', slideNext);
 prev.addEventListener('click', slidePrev);
 
 function slideNext() {
-    alert("image suivante");
+    
 	points.forEach((point)=>{
-		point.classList.remove("dot_selected");
+		point.classList.remove("dot_selected"); // on change le bullet point actif au suivant
 	});
 	slideNumber++;
 	if(slideNumber > (numberOfSlides - 1)){
 		slideNumber = 0;
 	}
-	points[slideNumber].classList.add("dot_selected");
+	points[slideNumber].classList.add("dot_selected"); // le point qui signale la diapositive en cours de visionnage
 
 	document.images[1].src = "./assets/images/slideshow/" + slides[slideNumber].image;
 	document.querySelector("#banner p").innerHTML = slides[slideNumber].tagLine;
 }
 
 function slidePrev() {
-    alert("image précédente");
+    
 
 	points.forEach((point)=>{
 		point.classList.remove("dot_selected");
